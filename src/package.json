@@ -1,0 +1,27 @@
+{
+  "name": "react-native-progressive-image",
+  "version": "0.0.1",
+  "description": "A component that will load a lower quality image first, then transitions into a higher quality version",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johan-dutoit/react-native-datatable.git"
+  },
+  "keywords": [
+    "React",
+    "Native",
+    "ReactNative",
+    "image",
+    "progressive",
+    "lazy"
+  ],
+  "author": "Johan du Toit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thestreet/react-native-progressive-image/issues"
+  },
+  "homepage": "https://github.com/thestreet/react-native-progressive-image#readme"
+}
