@@ -22,9 +22,7 @@ class ProgressiveImage extends React.Component {
             thumbnailOpacity: new Animated.Value(0),
             show: false,
             hasImageFailed: false,
-            loading: true,
-            thumbLoaded: false,
-            largeLoaded: false
+            loading: true
         };
 
         this.onLoad = this.onLoad.bind(this);
@@ -149,7 +147,7 @@ class ProgressiveImage extends React.Component {
             toValue: 0,
             duration: 250
         }).start();
-        this.setState({ loading: false, largeLoaded: true });
+        this.setState({ loading: false});
     }
 
     onLoadPlaceHolder() {
@@ -167,17 +165,14 @@ class ProgressiveImage extends React.Component {
         }).start();
 
         this.setState({
-            show: true,
-            thumbLoaded: true
+            show: true
         });
 
     }
 
     renderBusy() {
-        if (this.state.loading) {
-            return (
-                <BusyIndicator loading={true} viewStyle={[Style.busy, { height: this.props.style.height }]} size='large' />
-            );
+        if (this.state.loading && this.props.renderLoading) {
+            return this.props.renderLoading();
         }
     }
 
@@ -196,6 +191,7 @@ class ProgressiveImage extends React.Component {
 ProgressiveImage.propTypes = {
     imageUrl: React.PropTypes.string.isRequired,
     thumbnailUrl: React.PropTypes.string,
+    renderLoading: React.PropTypes.func
 }
 
 ProgressiveImage.defaultProps = {
